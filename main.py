@@ -11,7 +11,7 @@ co = cohere.Client(os.getenv("YOUR_COHERE_API_KEY"))
 
 # Setup Flask
 app = Flask(__name__)
-CORS(app, resources={r"/analyze": {"origins": "http://localhost:5173"}})
+CORS(app, resources={r"/analyze": {"origins": ["http://localhost:5173", "https://extraordinary-melba-9ac9bd.netlify.app/"]}})
 
 @app.route('/analyze', methods=['POST'])
 def analyze_resume():
